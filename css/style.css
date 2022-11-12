@@ -3,19 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-main{
-  background-color: red;
-}
+
 .container{
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 .webapp{
     width: 800px;
-    height: 400px;
+    height: 60vh;
     background-color: red;
     position: relative;
 }
@@ -63,3 +60,23 @@ img{
   .block{
     display: block;
   }
+  .app{
+    height: 100vh;
+  }
+  header{
+    min-height: 20%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,67,254,1) 47%, rgba(0,212,255,1) 100%); 
+  }
+  footer{
+    min-height: 20%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,67,254,1) 47%, rgba(0,212,255,1) 100%); 
+  }
+  main{
+    min-height: 60%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,251,254,1) 47%, rgba(0,212,255,1) 100%); 
+
+  
+ }

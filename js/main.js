@@ -60,7 +60,6 @@ function prevImg() {
    imgActive.classList.add("animate__animated")
    imgActive.classList.add("animate__bounceInLeft")
    
-   console.log(attiva)
  }
 //  increase active fino a quando diventa 4(mostrando l'ultima img), quando è 4 al posto di andare a 5 diamo ad active 0
 
