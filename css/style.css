@@ -3,11 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+main{
+  background-color: red;
+}
 .container{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .webapp{
     width: 800px;
@@ -46,10 +50,16 @@ img{
   
   #arrow-left {
     top: 50%;
-    left: 20px;
+    left: 280px;
   }
   
   #arrow-right {
-    right: 0;
+    right: 250px;
     top: 50%;
+  }
+  .none{
+    display: none;
+  }
+  .block{
+    display: block;
   }
