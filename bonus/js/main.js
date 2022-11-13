@@ -17,10 +17,9 @@ let pointercontainer=document.getElementById("pointer-container");
 for (let i = 0 ; i < imgArray.length ; i++) {
   bigImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="none" id="img-${i}">`;
   minImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="" id="min-${i}">`
-  pointercontainer.innerHTML+=`<div class="pointer" id="nr-${i}"></div>`
+  pointercontainer.innerHTML+=`<input type="radio" name="indicator" data-order="1" id="ind-${i}">`
   var pointerActive=document.getElementById("nr-" + 0)
-  var pointerUno=document.getElementById("nr-" + i)
-  // pointerActive sono i cerchi rossi
+  // pointerAci
 }
 // Inseriamo le img grandi e piccola
 
@@ -30,15 +29,20 @@ let minActive=document.getElementById("min-" + attiva)
 
 bigActive.classList.add("block");
 minActive.classList.add("block");
-pointerActive.classList.add("pointer-active")
 // Blocchiamo la prima img
 
 let arrowUp= document.getElementById("arrow-up");
 let arrowDown=document.getElementById("arrow-down");
+primopointer=document.getElementById("ind-"+ attiva).checked=true
+
 // dichiaro frecce
+
+let pointerUno=document.getElementById("nr-")
+// dichiaro i pointer
 
 arrowUp.addEventListener("click", slideUp)
 arrowDown.addEventListener("click", slideDown)
+
 // dichiaro le funzioni al click
 
 function slideUp(){
@@ -48,36 +52,32 @@ function slideUp(){
  }
  bigActive.classList.remove("block");
  minActive.classList.remove("active-colonna");
+ primopointer=document.getElementById("ind-"+ attiva).checked=false
+
  bigActive=document.getElementById("img-" + attiva);
  minActive=document.getElementById("min-" + attiva);
+ primopointer=document.getElementById("ind-"+ attiva)
  bigActive.classList.add("block");
  minActive.classList.add("active-colonna");
- pointerActive.classList.remove("pointer-active")
  pointerActive=document.getElementById("nr-" + attiva);
- pointerActive.classList.add("pointer-active")
+ primopointer=document.getElementById("ind-"+ attiva).checked=true
+
 }
-
- function slideDown(){
-   attiva++
-   if (attiva > ((imgArray.length)-1)) {
-    attiva=0
-   }
-  
-   bigActive.classList.remove("block");
-   minActive.classList.remove("active-colonna");
-   bigActive=document.getElementById("img-" + attiva);
-   minActive=document.getElementById("min-" + attiva);
-   bigActive.classList.add("block");
-   minActive.classList.add("active-colonna");
-   pointerActive.classList.remove("pointer-active")
-   pointerActive=document.getElementById("nr-" + attiva);
-   pointerActive.classList.add("pointer-active")
+function slideDown(){
+  attiva++
+  if (attiva > ((imgArray.length)-1)) {
+   attiva=0
   }
+  bigActive.classList.remove("block");
+  minActive.classList.remove("active-colonna");
+  primopointer=document.getElementById("ind-"+ attiva).checked=false
+  bigActive=document.getElementById("img-" + attiva);
+  minActive=document.getElementById("min-" + attiva);
+  primopointer=document.getElementById("ind-"+ attiva)
+  bigActive.classList.add("block");
+  minActive.classList.add("active-colonna");
+  pointerActive=document.getElementById("nr-" + attiva);
+  primopointer=document.getElementById("ind-"+ attiva).checked=true
 
- var slider=document.getElementById("output")
- function pointerLink(){  
-  bigActive.classList.remove("block")
-  bigActive.innerHTML=`<img src="${imgArray[2]}" alt="" class="">`
-  bigActive.classList.add("block")
  }
 
