@@ -18,8 +18,9 @@ for (let i = 0 ; i < imgArray.length ; i++) {
   bigImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="none" id="img-${i}">`;
   minImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="" id="min-${i}">`
   pointercontainer.innerHTML+=`<div class="pointer" id="nr-${i}"></div>`
-  var pointerUno=document.getElementById("nr-" + 0)
-  console.log(pointerUno)
+  var pointerActive=document.getElementById("nr-" + 0)
+  var pointerUno=document.getElementById("nr-" + i)
+  // pointerActive sono i cerchi rossi
 }
 // Inseriamo le img grandi e piccola
 
@@ -29,20 +30,16 @@ let minActive=document.getElementById("min-" + attiva)
 
 bigActive.classList.add("block");
 minActive.classList.add("block");
-pointerUno.classList.add("pointer-active")
+pointerActive.classList.add("pointer-active")
 // Blocchiamo la prima img
 
 let arrowUp= document.getElementById("arrow-up");
 let arrowDown=document.getElementById("arrow-down");
 // dichiaro frecce
 
-
-
-// dichiaro i pointer
-
 arrowUp.addEventListener("click", slideUp)
 arrowDown.addEventListener("click", slideDown)
-
+pointerUno.addEventListener("click", pointerLink)
 // dichiaro le funzioni al click
 
 function slideUp(){
@@ -56,23 +53,30 @@ function slideUp(){
  minActive=document.getElementById("min-" + attiva);
  bigActive.classList.add("block");
  minActive.classList.add("active-colonna");
- pointerUno.classList.remove("pointer-active")
- pointerUno=document.getElementById("nr-" + attiva);
- pointerUno.classList.add("pointer-active")
+ pointerActive.classList.remove("pointer-active")
+ pointerActive=document.getElementById("nr-" + attiva);
+ pointerActive.classList.add("pointer-active")
 }
 function slideDown(){
   attiva++
   if (attiva > ((imgArray.length)-1)) {
    attiva=0
   }
+  
   bigActive.classList.remove("block");
   minActive.classList.remove("active-colonna");
   bigActive=document.getElementById("img-" + attiva);
   minActive=document.getElementById("min-" + attiva);
   bigActive.classList.add("block");
   minActive.classList.add("active-colonna");
-  pointerUno.classList.remove("pointer-active")
-  pointerUno=document.getElementById("nr-" + attiva);
-  pointerUno.classList.add("pointer-active")
+  pointerActive.classList.remove("pointer-active")
+  pointerActive=document.getElementById("nr-" + attiva);
+  pointerActive.classList.add("pointer-active")
  }
 
+ var slider=document.getElementById("output")
+ function pointerLink(){  
+  bigActive.classList.remove("block")
+  bigActive.innerHTML=`<img src="${imgArray[2]}" alt="" class="">`
+  bigActive.classList.add("block")
+ }

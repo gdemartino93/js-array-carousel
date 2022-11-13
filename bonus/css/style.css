@@ -17,7 +17,6 @@
 #output{
     width: 800px;
     height: 60vh;
-    background-color: red;
     position: relative;
 }
 img{
@@ -61,7 +60,7 @@ img{
     left: 50%;
     top: 100%;
     transform: translate(-50%,-134%);
-    
+
   }
   .none{
     display: none;
@@ -100,10 +99,11 @@ img{
 }
 .active-colonna{
   opacity: 0.5;
+  border: 2px solid deepskyblue;
 }
 .pointer{
-  width: 15px;
-  height: 15px;
+  width: 11px;
+  height: 11px;
   border: 1px solid red;
   border-radius: 50%;
   display: flex;
@@ -120,9 +120,10 @@ img{
   display: flex;
   position: absolute;
   bottom: 0;
-  left: 50%;
   z-index: 1;
   gap: 5px;
+  left: 45%;
+  transform: translate(-45%,-0);
 }
 .slide{
   position: relative;
