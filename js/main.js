@@ -6,7 +6,7 @@ const imgArray=[
 `img/05.webp`,
 ]
 // array con img
-
+console.log(imgArray.length)
 let box=document.getElementById("output");
 let attiva = 0;
 // definisco container e variabile puntatore(active)
@@ -15,6 +15,7 @@ for (let i = 0; i < imgArray.length; i++){
  box.innerHTML+=`
     <div class="webapp none" id="img-${i}">
       <img src="${imgArray[i]}" alt="">
+    
     </div>
    `
 }
@@ -36,22 +37,18 @@ arrowRight.addEventListener("click",nextImg);
 function prevImg() {
    attiva--;
    if (attiva < 0) {
-     attiva = 4;
+     attiva = ((imgArray.length)-1);
    }
    imgActive.classList.remove("block");
    imgActive = document.getElementById("img-" + attiva);
    imgActive.classList.add("block");
-   imgActive.classList.add("animate__animated")
-   imgActive.classList.add("animate__bounceInRight")
-
-   console.log(attiva)
+  imgActive.classList.add("animate__animated")
+  imgActive.classList.add("animate__bounceInRight")
  }
 //  decrease active fino a quando diventa 0 (mostrando la prima img), quando è 0 al posto di andare a meno -1 gli diamo 4
- 
-
  function nextImg() {
    attiva++;
-   if (attiva > 4) {
+   if (attiva > ((imgArray.length) -1)) {
      attiva = 0;
    }
    imgActive.classList.remove("block");
@@ -59,7 +56,6 @@ function prevImg() {
    imgActive.classList.add("block");
    imgActive.classList.add("animate__animated")
    imgActive.classList.add("animate__bounceInLeft")
-   
  }
 //  increase active fino a quando diventa 4(mostrando l'ultima img), quando è 4 al posto di andare a 5 diamo ad active 0
 
