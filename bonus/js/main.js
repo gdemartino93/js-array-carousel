@@ -39,7 +39,6 @@ let arrowDown=document.getElementById("arrow-down");
 
 arrowUp.addEventListener("click", slideUp)
 arrowDown.addEventListener("click", slideDown)
-pointerUno.addEventListener("click", pointerLink)
 // dichiaro le funzioni al click
 
 function slideUp(){
@@ -57,22 +56,23 @@ function slideUp(){
  pointerActive=document.getElementById("nr-" + attiva);
  pointerActive.classList.add("pointer-active")
 }
-function slideDown(){
-  attiva++
-  if (attiva > ((imgArray.length)-1)) {
-   attiva=0
-  }
+
+ function slideDown(){
+   attiva++
+   if (attiva > ((imgArray.length)-1)) {
+    attiva=0
+   }
   
-  bigActive.classList.remove("block");
-  minActive.classList.remove("active-colonna");
-  bigActive=document.getElementById("img-" + attiva);
-  minActive=document.getElementById("min-" + attiva);
-  bigActive.classList.add("block");
-  minActive.classList.add("active-colonna");
-  pointerActive.classList.remove("pointer-active")
-  pointerActive=document.getElementById("nr-" + attiva);
-  pointerActive.classList.add("pointer-active")
- }
+   bigActive.classList.remove("block");
+   minActive.classList.remove("active-colonna");
+   bigActive=document.getElementById("img-" + attiva);
+   minActive=document.getElementById("min-" + attiva);
+   bigActive.classList.add("block");
+   minActive.classList.add("active-colonna");
+   pointerActive.classList.remove("pointer-active")
+   pointerActive=document.getElementById("nr-" + attiva);
+   pointerActive.classList.add("pointer-active")
+  }
 
  var slider=document.getElementById("output")
  function pointerLink(){  
@@ -80,3 +80,4 @@ function slideDown(){
   bigActive.innerHTML=`<img src="${imgArray[2]}" alt="" class="">`
   bigActive.classList.add("block")
  }
+
