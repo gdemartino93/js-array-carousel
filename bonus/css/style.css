@@ -12,6 +12,7 @@
 }
 .webapp{
   display: flex;
+ 
 }
 #output{
     width: 800px;
@@ -93,4 +94,36 @@ img{
   flex-direction: column;
   background-color: #000;
   min-height: 60vh;
+}
+#colonna > img{
+ height: calc(60vh / 5);
+}
+.active-colonna{
+  opacity: 0.5;
+}
+.pointer{
+  width: 15px;
+  height: 15px;
+  border: 1px solid red;
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+}
+.pointer-active{
+  width: 11px;
+  height: 11px;
+  background-color: yellow;
+  border-radius: 50%;
+
+}
+.pointer-container{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  gap: 5px;
+}
+.slide{
+  position: relative;
 }
