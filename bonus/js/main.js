@@ -7,60 +7,25 @@ const imgArray=[
 ]
 // array con img
 
-let box=document.getElementById("output");
-let attiva = 0;
-// definisco container e variabile puntatore(active)
+let bigImg=document.getElementById("output");
+let minImg=document.getElementById("colonna");
+let attiva= 0;
+console.log(bigImg)
+console.log(minImg)
+// Dichiaro i due container delle img e puntatore
 
-for (let i = 0; i < imgArray.length; i++){
- box.innerHTML+=`
-    <div class="webapp none" id="img-${i}">
-      <img src="${imgArray[i]}" alt="">
-    </div>
-   `
+for (let i = 0 ; i < imgArray.length ; i++) {
+  bigImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="none" id="img-${i}">`
+  minImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="none" id="min-${i}">`
 }
-// inserisco le img
+// Inseriamo le img grandi e piccola
 
-document.querySelector('.webapp').classList.add('block');
-// prendi primo div e applica la classe block per far apparire solo il primo div
+let bigActive=document.getElementById("img-" + attiva)
+let minActive=document.getElementById("min-" + attiva)
+console.log(bigActive)
+console.log(minActive)
 
-let imgActive = document.getElementById("img-" + attiva);
-imgActive.classList.add("block");
-// immagini attive
-
-const arrowLeft=document.getElementById("arrow-left");
-const arrowRight=document.getElementById("arrow-right");
-arrowLeft.addEventListener("click",prevImg);
-arrowRight.addEventListener("click",nextImg);
-// dichiarazione frecce e funzione ad evento al click
-
-function prevImg() {
-   attiva--;
-   if (attiva < 0) {
-     attiva = 4;
-   }
-   imgActive.classList.remove("block");
-   imgActive = document.getElementById("img-" + attiva);
-   imgActive.classList.add("block");
-   imgActive.classList.add("animate__animated")
-   imgActive.classList.add("animate__bounceInRight")
-
-   console.log(attiva)
- }
-//  decrease active fino a quando diventa 0 (mostrando la prima img), quando è 0 al posto di andare a meno -1 gli diamo 4
- 
-
- function nextImg() {
-   attiva++;
-   if (attiva > 4) {
-     attiva = 0;
-   }
-   imgActive.classList.remove("block");
-   imgActive = document.getElementById("img-" + attiva);
-   imgActive.classList.add("block");
-   imgActive.classList.add("animate__animated")
-   imgActive.classList.add("animate__bounceInLeft")
-   
- }
-//  increase active fino a quando diventa 4(mostrando l'ultima img), quando è 4 al posto di andare a 5 diamo ad active 0
-
+bigActive.classList.add("block");
+minActive.classList.add("block");
+// Blocchiamo la priam img
 

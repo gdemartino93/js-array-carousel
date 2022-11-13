@@ -11,6 +11,9 @@
     position: relative;
 }
 .webapp{
+  display: flex;
+}
+#output{
     width: 800px;
     height: 60vh;
     background-color: red;
@@ -45,14 +48,19 @@ img{
     opacity: 1;
   }
   
-  #arrow-left {
-    top: 50%;
-    left: 280px;
+  #arrow-up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-30%);
   }
   
-  #arrow-right {
-    right: 250px;
-    top: 50%;
+  #arrow-down {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-134%);
+    
   }
   .none{
     display: none;
@@ -76,7 +84,13 @@ img{
   main{
     min-height: 60%;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,251,254,1) 47%, rgba(0,212,255,1) 100%); 
-
-  
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,251,254,1) 47%, rgba(0,212,255,1) 100%);
  }
+ #colonna {
+  position: relative;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  min-height: 60vh;
+}
