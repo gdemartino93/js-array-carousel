@@ -76,7 +76,29 @@ img{
   main{
     min-height: 60%;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,251,254,1) 47%, rgba(0,212,255,1) 100%); 
-
-  
+    background: linear-gradient(90deg, rgb a(2,0,36,1) 0%, rgba(0,251,254,1) 47%, rgba(0,212,255,1) 100%); 
  }
+.circle{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.circle-active{
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+.indicator{
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
