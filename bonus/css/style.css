@@ -98,8 +98,8 @@ img{
  height: calc(60vh / 5);
 }
 .active-colonna{
-  opacity: 0.5;
   border: 2px solid deepskyblue;
+  filter: sepia(1);
 }
 .pointer{
   width: 11px;

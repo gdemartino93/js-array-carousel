@@ -62,10 +62,11 @@ function slideUp(){
  minActive=document.getElementById("min-" + attiva);
  primopointer=document.getElementById("ind-"+ attiva)
  bigActive.classList.add("block");
+ bigActive.classList.add("animate__animated")
+ bigActive.classList.add("animate__fadeIn")
  minActive.classList.add("active-colonna");
  pointerActive=document.getElementById("nr-" + attiva);
  primopointer=document.getElementById("ind-"+ attiva).checked=true
-
 }
 function slideDown(){
   attiva++
@@ -80,6 +81,8 @@ function slideDown(){
   primopointer=document.getElementById("ind-"+ attiva)
   bigActive.classList.add("block");
   minActive.classList.add("active-colonna");
+  bigActive.classList.add("animate__animated")
+ bigActive.classList.add("animate__fadeIn")
   pointerActive=document.getElementById("nr-" + attiva);
   primopointer=document.getElementById("ind-"+ attiva).checked=true
  }
@@ -100,35 +103,40 @@ function slideDown(){
   minActive.classList.add("active-colonna");
   pointerActive=document.getElementById("nr-" + attiva);
   primopointer=document.getElementById("ind-"+ attiva).checked=true
- 
  }
 
  function indicatorZero(event) {
     bigActive.classList.remove("block");
     bigActive=document.getElementById("img-" + 0);
     bigActive.classList.add("block");
-    
-    // changeImage(target.dataset.order)
-  }
-
-
+    bigActive.classList.add("animate__animated")
+    bigActive.classList.add("animate__fadeIn")
+}
 indicatorUno.addEventListener("click", function(){
   bigActive.classList.remove("block");
     bigActive=document.getElementById("img-" + 1);
     bigActive.classList.add("block");
+    bigActive.classList.add("animate__animated")
+  bigActive.classList.add("animate__fadeIn")
 }); 
 indicatorDue.addEventListener("click", function(){
   bigActive.classList.remove("block");
     bigActive=document.getElementById("img-" + 2);
     bigActive.classList.add("block");
+    bigActive.classList.add("animate__animated")
+    bigActive.classList.add("animate__fadeIn")
 }); 
 indicatorTre.addEventListener("click", function(){
   bigActive.classList.remove("block");
     bigActive=document.getElementById("img-" + 3);
     bigActive.classList.add("block");
+    bigActive.classList.add("animate__animated")
+    bigActive.classList.add("animate__fadeIn")
 }); 
 indicatorQuattro.addEventListener("click", function(){
   bigActive.classList.remove("block");
     bigActive=document.getElementById("img-" + 4);
     bigActive.classList.add("block");
+    bigActive.classList.add("animate__animated")
+    bigActive.classList.add("animate__fadeIn")
 }); 
