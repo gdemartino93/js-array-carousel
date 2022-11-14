@@ -10,7 +10,6 @@ const imgArray=[
 let bigImg=document.getElementById("output");
 let minImg=document.getElementById("colonna");
 let attiva= 0;
-let pointerAttiva=0;
 let pointercontainer=document.getElementById("pointer-container");
 // Dichiaro i due container delle img e puntatore
 
@@ -18,13 +17,17 @@ for (let i = 0 ; i < imgArray.length ; i++) {
   bigImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="none" id="img-${i}">`;
   minImg.innerHTML+=`<img src="${imgArray[i]}" alt="" class="" id="min-${i}">`
   pointercontainer.innerHTML+=`<input type="radio" name="indicator" data-order="1" id="ind-${i}">`
-  var pointerActive=document.getElementById("nr-" + 0)
-  // pointerAci
+  
 }
 // Inseriamo le img grandi e piccola
 
 let bigActive=document.getElementById("img-" + attiva)
 let minActive=document.getElementById("min-" + attiva)
+let indicator=document.getElementById("ind-" + 0)
+let indicatorUno=document.getElementById("ind-" + 1)
+let indicatorDue=document.getElementById("ind-" + 2)
+let indicatorTre=document.getElementById("ind-" + 3)
+let indicatorQuattro=document.getElementById("ind-" + 4)
 
 
 bigActive.classList.add("block");
@@ -36,12 +39,13 @@ let arrowDown=document.getElementById("arrow-down");
 primopointer=document.getElementById("ind-"+ attiva).checked=true
 
 // dichiaro frecce
-
-let pointerUno=document.getElementById("nr-")
-// dichiaro i pointer
-
 arrowUp.addEventListener("click", slideUp)
 arrowDown.addEventListener("click", slideDown)
+indicator.addEventListener("click", indicatorZero)
+indicatorDue.addEventListener("click", indicatorDue)
+indicatorTre.addEventListener("click", indicatorTre)
+indicatorQuattro.addEventListener("click", indicatorQuattro)
+
 
 // dichiaro le funzioni al click
 
@@ -78,6 +82,53 @@ function slideDown(){
   minActive.classList.add("active-colonna");
   pointerActive=document.getElementById("nr-" + attiva);
   primopointer=document.getElementById("ind-"+ attiva).checked=true
-
  }
 
+ function indicatorZero(){
+  attiva--
+  if (attiva < 0) {
+   attiva=imgArray.length - 1
+  }
+  bigActive.classList.remove("block");
+  minActive.classList.remove("active-colonna");
+  primopointer=document.getElementById("ind-"+ attiva).checked=false
+ 
+  bigActive=document.getElementById("img-" + attiva);
+  minActive=document.getElementById("min-" + attiva);
+  primopointer=document.getElementById("ind-"+ attiva)
+  bigActive.classList.add("block");
+  minActive.classList.add("active-colonna");
+  pointerActive=document.getElementById("nr-" + attiva);
+  primopointer=document.getElementById("ind-"+ attiva).checked=true
+ 
+ }
+
+ function indicatorZero(event) {
+    bigActive.classList.remove("block");
+    bigActive=document.getElementById("img-" + 0);
+    bigActive.classList.add("block");
+    
+    // changeImage(target.dataset.order)
+  }
+
+
+indicatorUno.addEventListener("click", function(){
+  bigActive.classList.remove("block");
+    bigActive=document.getElementById("img-" + 1);
+    bigActive.classList.add("block");
+}); 
+indicatorDue.addEventListener("click", function(){
+  bigActive.classList.remove("block");
+    bigActive=document.getElementById("img-" + 2);
+    bigActive.classList.add("block");
+}); 
+indicatorTre.addEventListener("click", function(){
+  bigActive.classList.remove("block");
+    bigActive=document.getElementById("img-" + 3);
+    bigActive.classList.add("block");
+}); 
+indicatorQuattro.addEventListener("click", function(){
+  bigActive.classList.remove("block");
+    bigActive=document.getElementById("img-" + 4);
+    bigActive.classList.add("block");
+}); 
